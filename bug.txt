@@ -1,0 +1,2 @@
+7) Ajout de messages sympas lors de l'echange
+8) Module reseau
