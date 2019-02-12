@@ -55,11 +55,16 @@ function CarteAction(libelle,carte,title,color,triggerLabel){
 	}
 }
 
-function CarteChance(libelle, carte) {
+function CarteGlouglou(libelle, carte, title)
+{
+	CarteAction.call(this, libelle, carte, title, 'tomato', 'glouglou');
+}
+
+function CarteChance(libelle, carte, title) {
 	CarteAction.call(this,libelle,carte,InitMonopoly.plateau.titles.chance,"lightblue","chance");	   
 }
 
-function CarteCaisseDeCommunaute(libelle, carte) {
+function CarteCaisseDeCommunaute(libelle, carte, title) {
 	CarteAction.call(this,libelle,carte,InitMonopoly.plateau.titles.communaute,"pink","caissecommunaute");	           
 }
 
@@ -544,7 +549,7 @@ var InitMonopoly = {
 		},
 		_buildCartes:function(data,Instance){				
 			return data!=null ? data.cartes.map(function(c){
-				return new Instance(c.nom, CarteActionFactory.get(c));					
+				return new Instance(c.nom, CarteActionFactory.get(c), c.title);
 			}):[];				
 		},
 		_draw:function(data){
@@ -553,7 +558,8 @@ var InitMonopoly = {
 			var colors = [];
 			var groups = [];
 			var _self = this;
-			
+
+			this.cartes.glouglou = this._buildCartes(data.glouglou, CarteGlouglou);
 			this.cartes.chance = this._buildCartes(data.chance,CarteChance);
 			this.cartes.caisseCommunaute = this._buildCartes(data.communaute,CarteCaisseDeCommunaute);
 							
@@ -577,8 +583,8 @@ var InitMonopoly = {
 					groups[this.colors[0]].nom = 'Gare';
 					groups[this.colors[0]].add(fiche);
 					break;
-				case "chance":
-					fiche = new CaseChance(this.axe, this.pos,data.images.chance,_self.cartes.chance);
+				case "glouglou":
+					fiche = new CaseChance(this.axe, this.pos,data.images.chance,_self.cartes.glouglou);
 					break;
 				case "communaute":
 					fiche = new CaseCaisseDeCommunaute(this.axe, this.pos,data.images.caisseDeCommunaute,_self.cartes.caisseCommunaute);
@@ -615,6 +621,8 @@ var InitMonopoly = {
 						GestionJoueur.change();
 					}, this.axe, this.pos,"depart");
 					break;
+				default :
+					console.log('card type not found', this.type);
 				}
 				if(fiche!=null){
 					GestionFiche.add(fiche);

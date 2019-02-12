@@ -93,6 +93,13 @@ function GagnerCarte(montant) {
 	}
 }
 
+function GlouglouCarte() {
+	CarteAction.call(this, null);
+	this.action = function(joueur){
+		GestionJoueur.change();
+	}
+}
+
 var CarteActionFactory = {
 	get:function(data) {
 		switch (data.type) {
@@ -116,6 +123,10 @@ var CarteActionFactory = {
 			return new BirthdayCarte(data.montant)
 		case "repair":
 			return new ReparationsCarte(data.hotel,data.maison)
+		case "glouglou":
+			return new GlouglouCarte();
+		default :
+			return 0
 		}
 		throw "Type inconnu";
 	}
