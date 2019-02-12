@@ -261,6 +261,9 @@ function setupCanvas(canvas) {
   // size * the device pixel ratio.
   canvas.width = rect.width * dpr;
   canvas.height = rect.height * dpr;
+  var divCanvas = document.querySelector('#plateau');
+  console.log(divCanvas);
+  divCanvas.setAttribute('style', "width: " + rect.width * dpr + "px; height: " + rect.height * dpr + "px;position:relative");
   var ctx = canvas.getContext('2d');
   // Scale all drawing operations by the dpr, so you
   // don't have to worry about the difference.
