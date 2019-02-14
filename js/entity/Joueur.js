@@ -1929,7 +1929,8 @@ var GestionJoueur = {
 		var img = this.imgJoueurs[i];
 		var argent = InitMonopoly.plateau.infos.argentJoueurDepart
 		var joueur = isRobot ? new JoueurOrdinateur(i, nom, color,argent) : joueur = new Joueur(i, nom, color,argent);
-		var div = $('<hr/><div id=\"' + id + '\"><div class="joueur-bloc"><span class="joueur-name">' + joueur.nom + '</span> : <span class="compte-banque"></span> ' + CURRENCY + '<span class="info-joueur" title="Info joueur" data-idjoueur="' + i + '"><img src="img/info-user2.png" style="cursor:pointer;width:24px;float:right"/></span></div></div>');
+		//var div = $('<hr/><div id=\"' + id + '\"><div class="joueur-bloc"><span class="joueur-name">' + joueur.nom + '</span> : <span class="compte-banque"></span> ' + CURRENCY + '<span class="info-joueur" title="Info joueur" data-idjoueur="' + i + '"><img src="img/info-user2.png" style="cursor:pointer;width:24px;float:right"/></span></div></div>');
+		var div = $('<hr/><div id=\"' + id + '\"><div class="joueur-bloc"><span class="joueur-name">' + joueur.nom + '<span class="info-joueur" title="Info joueur" data-idjoueur="' + i + '"><img src="img/info-user2.png" style="cursor:pointer;width:24px;float:right"/></span></div></div>');
 		$('.panneau_joueur').append(div);
 		
 		joueur.setDiv($('div[id="' + id + '"]'));

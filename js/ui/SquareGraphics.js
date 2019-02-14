@@ -283,6 +283,7 @@ function Case(pos, axe, color, title, prix, img) {
 			}
 		}
 		if (this.data.image != null) {
+			console.log("draw image", this.data.image);
 			var rotate = (Math.PI / 2) * ((this.axe + 2) % 4);
 			var lng = (largeur - this.data.image.width) / 2;
 			var dec = 10 + ((color != null) ? bordure : 10) + ((title != null) ? 10 : 0) + (this.data.image.margin || 0);

@@ -24,13 +24,29 @@ var DrawerHelper = {
 		canvas.closePath();	
 	},
     drawImage: function (canvas, img, x, y, width, height, rotate) {
-		canvas.save();
-		canvas.translate(x, y);
-		canvas.rotate(rotate);
-		try{
-			canvas.drawImage(img, 0, 0, width, height);
-		}catch(e){}
-		canvas.restore();
+    	if(img.complete){
+            canvas.save();
+			canvas.translate(x, y);
+			canvas.rotate(rotate);
+            try {
+                canvas.drawImage(img, 0, 0, width, height);
+            } catch (e) {
+                console.error(e);
+            }
+            canvas.restore();
+        }    	
+		img.onload = function() {
+			canvas.save();
+			canvas.translate(x, y);
+			canvas.rotate(rotate);
+			try {
+				canvas.drawImage(img, 0, 0, width, height);
+			} catch (e) {
+				console.error(e);
+			}
+			canvas.restore();
+		}
+
     },
 	/* Detect les sauts de ligne */
 	_splitLine:function(mots){
@@ -262,7 +278,6 @@ function setupCanvas(canvas) {
   canvas.width = rect.width * dpr;
   canvas.height = rect.height * dpr;
   var divCanvas = document.querySelector('#plateau');
-  console.log(divCanvas);
   divCanvas.setAttribute('style', "width: " + rect.width * dpr + "px; height: " + rect.height * dpr + "px;position:relative");
   var ctx = canvas.getContext('2d');
   // Scale all drawing operations by the dpr, so you

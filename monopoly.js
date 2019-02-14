@@ -508,8 +508,8 @@ var InitMonopoly = {
 			DrawerFactory.addInfo('textColor',this.infos.textColor || '#000000');
 			DrawerFactory.addInfo('backgroundColor',this.infos.backgroundColor || '#FFFFFF');
 			this.infos.argentJoueurDepart = this.infos.argent || 50000;
-			this.infos.montantDepart = this.infos.depart || 20000;
-         this.infos.montantPrison = this.infos.prison || 5000;
+			this.infos.montantDepart = this.infos.depart || 50000;
+         this.infos.montantPrison = this.infos.prison || 2;
 			if(this.infos.colors){
 				GestionJoueur.colorsJoueurs = this.infos.colors;
 			}
