@@ -22,6 +22,7 @@ function PlateauCase(axe,pos,type){
 function ParcGratuit(axe, pos) {
     PlateauCase.call(this,axe,pos,"parc");
     this.montant = null;
+    this.gorgees = 2;
 	this._titre = "Parc Gratuit";
     this.drawing = DrawerFactory.getCaseSpeciale(0, this._titre);
     Drawer.add(this.drawing);
@@ -39,8 +40,9 @@ function ParcGratuit(axe, pos) {
 
     this.action = function () {
 		var _self = this;
-        return InfoMessage.create(GestionJoueur.getJoueurCourant(),"Parc gratuit", "lightblue", "Vous gagnez " + this.montant + " " + CURRENCY, function (param) {
+        return InfoMessage.create(GestionJoueur.getJoueurCourant(),"Parc gratuit", "lightblue", "Vous buvez " + this.gorgees + " " + CURRENCY, function (param) {
             param.joueur.gagner(param.montant);
+            _self.gorgees += 2;
             _self.setMontant(0);
             GestionJoueur.change();
         }, {
