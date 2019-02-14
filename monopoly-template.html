@@ -194,9 +194,12 @@
 	  <fieldset>
 	    <legend style="font-weight:bold">Créer une partie</legend>
 	    <fieldset id="idPartie"><legend>Joueurs</legend>
-		<input type="text" id="idNomJoueur" name="joueur" placeholder="Nom"/><br/>
+		<div id="inputPlayerNames">
+			<input type="text" name="joueur0" placeholder="Nom"/><br/>
+			<input type="text" name="joueur1" placeholder="Nom"/><br/>
+		</div>
 	    Nombre de joueur :
-	    <select name="nbPlayers">
+	    <select id="nbPlayer" name="nbPlayers">
 		 <option value="2">2</option>
 		 <option value="3">3</option>
 		 <option value="4">4</option>
@@ -281,6 +284,22 @@
 	</div>
  
 	<script language="javascript">
+
+	$(document).ready(function() {
+		$('#nbPlayer').change(function () {
+			var nbPlayer = $(this).find(":checked").val();
+			var divInputPlayerName = $('#inputPlayerNames');
+			var divHtml = '';
+			for (var i = 0; i < nbPlayer; i++) {
+				var namePlayer = $('input[name="joueur' + i + '"]').val();
+				namePlayer = namePlayer === undefined ? '' : namePlayer;
+				divHtml += '<input type="text" name="joueur' + i + '" placeholder="Nom" value="' + namePlayer + '" />' + '<br/>';
+			}
+			divInputPlayerName.html(divHtml);
+		});
+	});
+
+
 	// On detecte le type de donnees a charger
 	var nomPlateau = "data-monopoly.json";
 	if (location.href.indexOf("plateau=")!=-1) {

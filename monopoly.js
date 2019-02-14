@@ -705,17 +705,12 @@ var InitMonopoly = {
 		var j = this.plateau.infos.nomsJoueurs.length > 0 ? this.plateau.infos.nomsJoueurs[0] : "";
 		options = $.extend({},{nbPlayers:0,nbRobots:0,waitTimeIA:1,joueur:j},options);
 
-
 		for (var i = 0; i < options.nbPlayers; i++) {
-            var nom = "Joueur " + (i+1);
-			if(i == 0 && options.joueur != "" ){
-				nom = options.joueur;
-			}else{
-				if(this.plateau.infos.nomsJoueurs.length > i){
-					nom = this.plateau.infos.nomsJoueurs[i];
-				}
+			var nom = options['joueur' + i];
+			if(nom == "" ) {
+				nom = this.plateau.infos.nomsJoueurs[i];
 			}
-			GestionJoueur.create(i >= options.nbPlayers - options.nbRobots, i,nom);            
+			GestionJoueur.create(i >= options.nbPlayers - options.nbRobots, i,nom);
 		}
 		this.afterCreateGame();
 		GestionJoueur.change();
