@@ -23,7 +23,7 @@ function ParcGratuit(axe, pos) {
     PlateauCase.call(this,axe,pos,"parc");
     this.montant = null;
     this.gorgees = 2;
-	this._titre = "Parc Gratuit";
+	this._titre = "Funz";
     this.drawing = DrawerFactory.getCaseSpeciale(0, this._titre);
     Drawer.add(this.drawing);
 
@@ -40,7 +40,7 @@ function ParcGratuit(axe, pos) {
 
     this.action = function () {
 		var _self = this;
-        return InfoMessage.create(GestionJoueur.getJoueurCourant(),"Parc gratuit", "lightblue", "Vous buvez " + this.gorgees + " " + CURRENCY, function (param) {
+        return InfoMessage.create(GestionJoueur.getJoueurCourant(),"Funz", "lightblue", "Vous buvez " + this.gorgees + " " + CURRENCY, function (param) {
             param.joueur.gagner(param.montant);
             _self.gorgees += 2;
             _self.setMontant(0);
@@ -454,7 +454,7 @@ function Fiche(axe, pos, colors, nom, achat, loyers, prixMaison, img) {
 
 	this.chezSoi = function () {
 		$.trigger('monopoly.chezsoi',{joueur:this.joueurPossede,maison:this});
-		return InfoMessage.create(GestionJoueur.getJoueurCourant(),"Vous etes " + this.nom, this.color, "Vous etes chez vous", function(){GestionJoueur.change()});
+		return InfoMessage.create(GestionJoueur.getJoueurCourant(), this.nom, this.color, "Vous êtes chez vous", function(){GestionJoueur.change()});
 	}
 
 	this.sellMaison = function (joueur, noRefresh) {
@@ -519,7 +519,7 @@ function Fiche(axe, pos, colors, nom, achat, loyers, prixMaison, img) {
 	}
 
 	this.payerLoyer = function () {
-		return InfoMessage.create(GestionJoueur.getJoueurCourant(),"Vous etes " + this.nom, this.color, "Vous etes chez " + this.joueurPossede.nom + " vous devez payez la somme de " + this.getLoyer() + " " + CURRENCY, function (param) {
+		return InfoMessage.create(GestionJoueur.getJoueurCourant(),"Vous etes " + this.nom, this.color, "Vous etes chez " + this.joueurPossede.nom + ", vous devez boire " + this.getLoyer() + " " + CURRENCY, function (param) {
 			$.trigger('monopoly.payerLoyer', {
 				joueur: param.joueurPaye,
 				maison: param.maison

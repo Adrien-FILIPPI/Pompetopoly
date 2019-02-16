@@ -14,7 +14,7 @@
 		{"type": "glouglou","axe": 2,"pos": 2},
 		{"type": "propriete","groupe": "Violet","axe": 2,"pos": 3,"nom": "Le Baroque","colors": ["#812B5C", "#DFA4C6"],"prix": 1,"loyers": [1, 2, 3, 4, 5, 6],"prixMaison": 1},
 		{"type": "glouglou","axe": 2,"pos": 4},
-		{"type": "gare","axe": 2,"pos": 5,"nom": "DouxDoux","colors": ["#000000", "#ABABAB"],"prix": 5,"loyers": [5, 10, 15, 20]},
+		{"type": "gare1","axe": 2,"pos": 5,"nom": "Adri","colors": ["#000000", "#ABABAB"],"prix": 5,"loyers": [5, 10, 15, 20]},
 		{"type": "propriete","groupe": "Bleu clair","axe": 2,"pos": 6,"nom": "LouBar","colors": ["#119AEB", "#98CEEE"],"prix": 2,"loyers": [2, 3, 5, 6, 7, 8],"prixMaison": 2},
 		{"type": "glouglou","axe": 2,"pos": 7},
 		{"type": "propriete","groupe": "Bleu clair","axe": 2,"pos": 8,"nom": "JoBar","colors": ["#119AEB", "#98CEEE"],"prix": 2,"loyers": [2, 3, 5, 6, 7, 8],"prixMaison": 2},
@@ -24,7 +24,7 @@
 		{"type": "glouglou","axe": 3,"pos": 2},
 		{"type": "propriete","groupe": "Violet clair","axe": 3,"pos": 3,"nom": "Bar Bouillé","colors": ["#73316F", "#DFB4DC"],"prix": 3,"loyers": [3, 4, 6, 7, 8, 10],"prixMaison": 3},				
 		{"type": "propriete","groupe": "Violet clair","axe": 3,"pos": 4,"nom": "Bar Bichette","colors": ["#73316F", "#DFB4DC"],"prix": 4,"loyers": [4, 5, 6, 8, 9, 11],"prixMaison": 4},
-		{"type": "gare","axe": 3,"pos": 5,"nom": "ShouwShouw","colors": ["#000000", "#ABABAB"],"prix": 5,"loyers": [5, 10, 15, 20]},
+		{"type": "gare2","axe": 3,"pos": 5,"nom": "Mau","colors": ["#000000", "#ABABAB"],"prix": 5,"loyers": [5, 10, 15, 20]},
 		{"type": "propriete","groupe": "Orange","axe": 3,"pos": 6,"nom": "BarBar","colors": ["#D16E2D", "#FECC84"],"prix": 4,"loyers": [4, 5, 6, 8, 9, 11],"prixMaison": 4},
 		{"type": "glouglou","axe": 3,"pos": 7},
 		{"type": "propriete","groupe": "Orange","axe": 3,"pos": 8,"nom": "Barde","colors": ["#D16E2D", "#FECC84"],"prix": 4,"loyers": [4, 5, 6, 8, 9, 11],"prixMaison": 4},
@@ -34,7 +34,7 @@
 		{"type": "glouglou","axe": 0,"pos": 2},
 		{"type": "propriete","groupe": "Rouge","axe": 0,"pos": 3,"nom": "Bar à Gouineur","colors": ["#D32C19", "#F9AEA6"],"prix": 5,"loyers": [5, 6, 7, 9, 10, 12],"prixMaison": 5},	
 		{"type": "propriete","groupe": "Rouge","axe": 0,"pos": 4,"nom": "Bar à Thym","colors": ["#D32C19", "#F9AEA6"],"prix": 6,"loyers": [6, 7, 8, 10, 12, 14],"prixMaison": 6},						
-		{"type": "gare","axe": 0,"pos": 5,"nom": "MaiteTemai","colors": ["#000000", "#ABABAB"],"prix": 5,"loyers": [5, 10, 15, 20]},		
+		{"type": "gare3","axe": 0,"pos": 5,"nom": "Gabi","colors": ["#000000", "#ABABAB"],"prix": 5,"loyers": [5, 10, 15, 20]},		
 		{"type": "propriete","groupe": "Jaune","axe": 0,"pos": 6,"nom": "Le Carambar","colors": ["#E6E018", "#F8F587"],"prix": 6,"loyers": [6, 7, 8, 10, 12, 14],"prixMaison": 6},
 		{"type": "propriete","groupe": "Jaune","axe": 0,"pos": 7,"nom": "Le malabar","colors": ["#E6E018", "#F8F587"],"prix": 6,"loyers": [6, 7, 8, 10, 12, 14],"prixMaison": 6},								
 		{"type": "glouglou","axe": 0,"pos": 8},
@@ -44,7 +44,7 @@
 		{"type": "propriete","groupe": "Vert","axe": 1,"pos": 2,"nom": "Allahu Ak-Bar","colors": ["#11862E", "#93D1A2"],"prix": 8,"loyers": [8, 9, 10, 13, 15, 16],"prixMaison": 8},
 		{"type": "glouglou","axe": 1,"pos": 3},
 		{"type": "propriete","groupe": "Vert","axe": 1,"pos": 4,"nom": "Zanzi Bar","colors": ["#11862E", "#93D1A2"],"prix": 8,"loyers": [8, 9, 10, 13, 15, 16],"prixMaison": 8},		
-		{"type": "gare","axe": 1,"pos": 5,"nom": "CharmiCharmeur","colors": ["#000000", "#ABABAB"],"prix": 5,"loyers": [5, 10, 15, 20]},
+		{"type": "gare4","axe": 1,"pos": 5,"nom": "Gab","colors": ["#000000", "#ABABAB"],"prix": 5,"loyers": [5, 10, 15, 20]},
 		{"type": "glouglou","axe": 1,"pos": 6},
 		{"type": "propriete","groupe": "Bleu","axe": 1,"pos": 7,"nom": "Le Guet à Pintes","colors": ["#132450", "#808EB0"],"prix": 9,"loyers": [9, 12, 15, 17, 18, 19],"prixMaison": 9},
 		{"type": "glouglou","axe": 1,"pos": 8},		
@@ -57,9 +57,9 @@
             "height": 50
 		},
 		"chance":{
-		    "src": "img/interrogation.png",
+		    "src": "img/beer.png",
             "width": 50,
-            "height": 60
+            "height": 55
         },
 		"caisseDeCommunaute":{
 			"src": "img/banque2.png",
@@ -72,21 +72,41 @@
             "height": 35,
 			"margin": 5
 		},
-		"gare":{
-			"src": "img/big_train.png",
+
+		"Adri":{
+			"src": "img/adri.png",
+            "width": 50,
+            "height": 40,
+			"margin": 0
+		},
+
+		"Mau":{
+			"src": "img/mau.png",
+            "width": 45,
+            "height": 45,
+			"margin": 0
+		},
+
+		"Gabi":{
+			"src": "img/gabi.png",
             "width": 50,
             "height": 35,
-			"margin": 5
+			"margin": 0
+		},
+
+		"Gab":{
+			"src": "img/gab.png",
+            "width": 50,
+            "height": 35,
+			"margin": 0
 		}
 	},
 	"titles":{
-		"chance":"Chance",
+		"chance":"R3KTED",
 		"communaute":"Caisse de Communauté"
 	},
 	"chance":{
-		"cartes":[
-			{"nom":"C'est votre anniversaire, chaque joueur vous donne F 1.000","type":"birthday","montant":1000}
-		]
+		"cartes":[]
 	},
 	"communaute":{
 		"cartes":[]

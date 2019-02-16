@@ -159,7 +159,7 @@ function GestionDesImpl(){
 		var gd = this;
 		if (this.isDouble()) {
 			MessageDisplayer.write(GestionJoueur.getJoueurCourant(), message + " et sort de prison");
-			var buttons = InfoMessage.create(GestionJoueur.getJoueurCourant(),"Libere de prison", "lightblue", "Vous etes liberes de prison grace a un double", function () {
+			var buttons = InfoMessage.create(GestionJoueur.getJoueurCourant(),"Libéré de prison", "lightblue", "Vous êtes libéré de prison grâce à un double", function () {
 				GestionJoueur.getJoueurCourant().exitPrison();
 				gd.endLancer();
 			}, {});
@@ -167,9 +167,9 @@ function GestionDesImpl(){
 			return;
 		} else {
 			if (j.nbDouble == 2) {
-				MessageDisplayer.write(j, message + " et sort de prison en payant " + CURRENCY + " " + InitMonopoly.plateau.infos.montantPrison);
-            var messagePrison = "Vous etes liberes de prison, mais vous devez payer " + CURRENCY + " " + InitMonopoly.plateau.infos.montantPrison+ " !";
-				var buttons = InfoMessage.create(j,"Libere de prison", "lightblue", messagePrison, function () {
+				MessageDisplayer.write(j, message + " et sort de prison en payant " + InitMonopoly.plateau.infos.montantPrison + CURRENCY);
+            var messagePrison = "Vous êtes libéré de prison, mais vous devez payer " + CURRENCY + InitMonopoly.plateau.infos.montantPrison + " !";
+				var buttons = InfoMessage.create(j,"Libéré de prison", "lightblue", messagePrison, function () {
 					j.payerParcGratuit(InitMonopoly.plateau.parcGratuit,InitMonopoly.plateau.infos.montantPrison, function () {
 						j.exitPrison();
 						gd.endLancer();
@@ -578,8 +578,23 @@ var InitMonopoly = {
 					groups[this.colors[0]].nom = 'Compagnie';
 					groups[this.colors[0]].add(fiche);
 					break;
-				case "gare":
-					fiche = new FicheGare(this.axe, this.pos, this.colors, this.nom, this.prix, this.loyers, data.images.gare);
+				case "gare1":
+					fiche = new FicheGare(this.axe, this.pos, this.colors, this.nom, this.prix, this.loyers, data.images.Adri);
+					groups[this.colors[0]].nom = 'Gare';
+					groups[this.colors[0]].add(fiche);
+					break;
+				case "gare2":
+					fiche = new FicheGare(this.axe, this.pos, this.colors, this.nom, this.prix, this.loyers, data.images.Mau);
+					groups[this.colors[0]].nom = 'Gare';
+					groups[this.colors[0]].add(fiche);
+					break;
+				case "gare3":
+					fiche = new FicheGare(this.axe, this.pos, this.colors, this.nom, this.prix, this.loyers, data.images.Gabi);
+					groups[this.colors[0]].nom = 'Gare';
+					groups[this.colors[0]].add(fiche);
+					break;
+				case "gare4":
+					fiche = new FicheGare(this.axe, this.pos, this.colors, this.nom, this.prix, this.loyers, data.images.Gab);
 					groups[this.colors[0]].nom = 'Gare';
 					groups[this.colors[0]].add(fiche);
 					break;
@@ -670,14 +685,14 @@ var InitMonopoly = {
 		this._loadPlateaux();
 		this._configSauvegardePanel();
 		this.panelPartie.dialog({
-			title: "Monopoly",
+			title: "Pompetopoly",
 			closeOnEscape: false,
 			modal: true,
 			width: 400,
 			buttons: [{
 				text: "Valider",
 				click: function(){InitMonopoly._loadOrCreateGame();}
-			}]
+			}],
 		});
 	},
 	_loadOrCreateGame:function(){
